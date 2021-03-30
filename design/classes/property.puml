@@ -1,0 +1,25 @@
+@startuml Property
+
+interface Property {
+    mut currentLegalDocuments: List[LegalDocument]
+    mut address: List[Address]
+    location: GeoLocation
+    shape: Vertex[]
+}
+
+interface LegalDocument {
+    previous: Optional[LegalDocument]
+    document: Bitmap
+}
+
+interface Vertex
+
+Property "1" *-- "1..*" LegalDocument
+Property "1" *-- "2..*" Vertex
+
+note right of Vertex
+    Relative to location
+end note
+
+
+@enduml

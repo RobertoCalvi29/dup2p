@@ -1,0 +1,33 @@
+
+@startuml secondary
+
+title Secondary Use Case Diagram 
+
+!include actors.puml
+
+(List publicly) as list_pub
+(List privately) as list_pri
+(Browse) as browse
+(Get mortgage) as mortgage
+(Liquidity pool) as liq
+
+
+user --> list_pub
+user --> browse
+user --> list_pri
+user -> (Hire)
+(Hire) -> verif
+user -> mortgage
+mortgage <.. liq
+user -> (Invest)
+(Invest) ..> liq
+
+mortgage <.. prop: collateralizes
+
+verif --> (Advertise availability)
+
+list_pub --> prop
+browse --> prop
+list_pri --> prop
+
+@enduml

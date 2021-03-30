@@ -1,0 +1,29 @@
+@startuml primary
+
+title Primary Use Case Diagram 
+
+!include actors.puml
+actor "Law representative" as lawyer
+
+(Sell) as sell
+(Buy) as buy
+(Own) as own
+(Inspect) as inspect
+
+
+user --> sell
+user --> buy
+user --> own
+
+lawyer .> sell: officializes
+lawyer .> buy: officializes
+lawyer .> own: officializes
+
+verif --> inspect
+
+sell --> prop
+buy --> prop
+own --> prop
+inspect --> prop
+
+@enduml

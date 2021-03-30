@@ -1,0 +1,7 @@
+@startuml actors
+
+actor "Real Estate" as prop
+actor "User" as user
+actor "Inspector" as verif
+
+@enduml
