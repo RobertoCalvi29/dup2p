@@ -6,12 +6,12 @@ contract LegalDocumentsCollectible is ERC721 {
     uint256 public tokenCounter;
     uint256 realEstateId;
 
-    constructor (uint256 realEstateId) public ERC721 ("LegalDocCollectible", "LDC"){
+    constructor () public ERC721 ("LegalDocCollectible", "LDC"){
         tokenCounter = 0;
 
     }
 
-    function createCollectible(string memory tokenURI) public returns (uint256) {
+    function createCollectible(string memory tokenURI, uint256 realEstateId) public returns (uint256) {
         uint256 newItemId = tokenCounter;
         _safeMint(msg.sender, newItemId);
         _setTokenURI(newItemId, tokenURI);
